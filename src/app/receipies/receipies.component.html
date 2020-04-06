@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-receipie-list
+      (itemWasSelected)="itemWasSelected($event)"
+    ></app-receipie-list>
+  </div>
+  <div class="col-md-7">
+    <ng-template #Select>
+      Select Recepie
+    </ng-template>
+
+    <app-receipie-details
+      *ngIf="selectedItem != undefined; else Select"
+      [recepie]="selectedItem"
+    >
+    </app-receipie-details>
+  </div>
+</div>
